@@ -1,1 +1,17 @@
 # Solacium-1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Web Page</title>
+</head>
+<body>
+
+    <h1>Welcome to My Website</h1>
+    <p>This is a paragraph of text on your new webpage.</p>
+
+    <!-- This is a comment. It won't show up on the live page! -->
+
+</body>
+</html>
