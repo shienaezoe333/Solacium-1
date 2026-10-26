@@ -936,19 +936,16 @@
                 gain.connect(masterGain);
                 osc.start(now);
                 osc.stop(now + 0.31);
-            } else if (currentSFX === 'vineboom') {
-                // Heavy bass drop impact
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(130, now);
-                osc.frequency.exponentialRampToValueAtTime(30, now + 0.5);
-                gain.gain.setValueAtTime(0.8 * soundVolume, now);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
-                osc.connect(gain);
-                gain.connect(masterGain);
-                osc.start(now);
-                osc.stop(now + 0.51);
+           } else if (currentSFX === 'vineboom') {
+    const boom = new Audio(
+        'https://www.myinstants.com/media/sounds/vine-boom.mp3'
+    );
+
+    boom.volume = soundVolume;
+    boom.play().catch(err => {
+        console.error('Failed to play Vine Boom:', err);
+    });
+}
             } else if (currentSFX === 'sixseven') {
                 // Two upbeat tones
                 const osc = audioCtx.createOscillator();
