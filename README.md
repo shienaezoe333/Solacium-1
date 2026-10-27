@@ -39,15 +39,8 @@
             font-family: 'Fredoka', cursive;
         }
 
-        /* Aero Glass UI styling with dynamic theme variables */
-        .aero-window {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 2px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 15px 35px rgba(0, 30, 80, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-        }
+        /* <img alt="ss" src="13.png" />
+
 
         .aero-header {
             background: linear-gradient(180deg, var(--theme-header-1) 0%, var(--theme-header-2) 50%, var(--theme-header-3) 100%);
