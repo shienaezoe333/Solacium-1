@@ -923,18 +923,10 @@
         verityAudio.play().catch(e => console.log("Audio play blocked", e));
     }
                 });
-            } else {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(400 + Math.random() * 200, now);
-                osc.frequency.exponentialRampToValueAtTime(800 + Math.random() * 300, now + 0.08);
-                gain.gain.setValueAtTime(0.4 * soundVolume, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
-                osc.connect(gain);
-                gain.connect(masterGain);
-                osc.start(now);
-                osc.stop(now + 0.09);
+           } else {
+                const defaultAudio = new Audio('Normal_pop_sound.mp3');
+                defaultAudio.volume = soundVolume;
+                defaultAudio.play().catch(e => console.log("Audio play blocked", e));
             }
         }
 
