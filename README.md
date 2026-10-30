@@ -902,55 +902,26 @@
         vineBoomAudio.volume = soundVolume;
         vineBoomAudio.play().catch(e => console.log("Audio play blocked", e));
     }
-            } else if (currentSFX === 'sixseven') {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(523.25, now);
-                osc.frequency.setValueAtTime(659.25, now + 0.1);
-                gain.gain.setValueAtTime(0.3 * soundVolume, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
-                osc.connect(gain);
-                gain.connect(masterGain);
-                osc.start(now);
-                osc.stop(now + 0.26);
-            } else if (currentSFX === 'fahhh') {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'triangle';
-                osc.frequency.setValueAtTime(800, now);
-                osc.frequency.exponentialRampToValueAtTime(250, now + 0.4);
-                gain.gain.setValueAtTime(0.4 * soundVolume, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
-                osc.connect(gain);
-                gain.connect(masterGain);
-                osc.start(now);
-                osc.stop(now + 0.41);
-            } else if (currentSFX === 'heehee') {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(1050, now);
-                osc.frequency.setValueAtTime(1300, now + 0.08);
-                gain.gain.setValueAtTime(0.35 * soundVolume, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.22);
-                osc.connect(gain);
-                gain.connect(masterGain);
-                osc.start(now);
-                osc.stop(now + 0.23);
-            } else if (currentSFX === 'verity') {
-                const freqs = [523.25, 659.25, 783.99];
-                freqs.forEach((f, idx) => {
-                    const osc = audioCtx.createOscillator();
-                    const gain = audioCtx.createGain();
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(f, now + idx * 0.05);
-                    gain.gain.setValueAtTime(0.2 * soundVolume, now + idx * 0.05);
-                    gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.05 + 0.3);
-                    osc.connect(gain);
-                    gain.connect(masterGain);
-                    osc.start(now + idx * 0.05);
-                    osc.stop(now + idx * 0.05 + 0.31);
+          } else if (currentSFX === 'sixseven') {
+        const sixSevenAudio = new Audio('six_seven.mp3');
+        sixSevenAudio.volume = soundVolume;
+        sixSevenAudio.play().catch(e => console.log("Audio play blocked", e));
+    }
+        } else if (currentSFX === 'fahhh') {
+        const fahhhAudio = new Audio('fahhhh.mp3');
+        fahhhAudio.volume = soundVolume;
+        fahhhAudio.play().catch(e => console.log("Audio play blocked", e));
+    }
+        } else if (currentSFX === 'heehee') {
+        const heeHeeAudio = new Audio('michael-jackson-hee-hee.mp3');
+        heeHeeAudio.volume = soundVolume;
+        heeHeeAudio.play().catch(e => console.log("Audio play blocked", e));
+    }
+          } else if (currentSFX === 'verity') {
+        const verityAudio = new Audio('hey-its-me-its-verity.mp3');
+        verityAudio.volume = soundVolume;
+        verityAudio.play().catch(e => console.log("Audio play blocked", e));
+    }
                 });
             } else {
                 const osc = audioCtx.createOscillator();
