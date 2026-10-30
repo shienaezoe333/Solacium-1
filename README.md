@@ -1,3 +1,4 @@
+[solacium_relaxing_bubble_pop_game.html](https://github.com/user-attachments/files/34179930/solacium_relaxing_bubble_pop_game.html)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
 
         :root {
-            /* Palette Swatches from Design Chart */
+            /* Palette Swatches */
             --color-zircon: #F4F8FB;
             --color-fungreen: #007A33;
             --color-conifer: #99E344;
@@ -39,20 +40,19 @@
             font-family: 'Fredoka', cursive;
         }
 
-        /* Aero Glass UI styling with dynamic theme variables */
+        /* Aero Window Styling with Solid White Background for Modals */
         .aero-window {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 2px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 15px 35px rgba(0, 30, 80, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            background-color: #ffffff;
             border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            overflow: hidden;
         }
 
         .aero-header {
             background: linear-gradient(180deg, var(--theme-header-1) 0%, var(--theme-header-2) 50%, var(--theme-header-3) 100%);
-            border-top-left-radius: 9px;
-            border-top-right-radius: 9px;
+            border-top-left-radius: 11px;
+            border-top-right-radius: 11px;
             color: white;
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
             box-shadow: inset 0 1px 1px rgba(255,255,255,0.6);
@@ -77,7 +77,7 @@
             transform: scale(0.95);
         }
 
-        /* Custom Shiny Glass Bubble Buttons matching provided images */
+        /* Custom Shiny Glass Bubble Buttons */
         .shiny-bubble-btn {
             position: relative;
             background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.95) 0%, rgba(240, 248, 255, 0.85) 45%, rgba(210, 238, 255, 0.6) 75%, rgba(180, 220, 255, 0.4) 100%);
@@ -106,7 +106,6 @@
             pointer-events: none;
         }
 
-        /* Iridescent rainbow edge glare */
         .shiny-bubble-btn::after {
             content: '';
             position: absolute;
@@ -130,7 +129,7 @@
             transform: scale(0.95);
         }
 
-        /* Interactive Game Bubbles - Uniform and less colorful */
+        /* Interactive Game Bubbles */
         .pop-bubble {
             position: relative;
             width: 64px;
@@ -223,6 +222,7 @@
             font-weight: bold;
             border-radius: 6px;
             transition: all 0.15s;
+            cursor: pointer;
         }
         .os-btn:hover {
             background: linear-gradient(180deg, #FFFFFF 0%, #EAF3FD 50%, #B2D1F5 100%);
@@ -261,7 +261,7 @@
     <div id="startPage" class="absolute inset-0 flex flex-col justify-between p-6 z-10 transition-opacity duration-500">
         <!-- Top Info Header -->
         <div class="w-full flex justify-between items-center max-w-5xl mx-auto pt-2">
-            <div class="aero-window px-4 py-1.5 flex items-center gap-2 text-xs font-semibold text-slate-700 shadow-sm">
+            <div class="bg-white/80 backdrop-blur-md rounded-full px-4 py-1.5 flex items-center gap-2 text-xs font-semibold text-slate-700 shadow-md">
                 <i class="fa-solid fa-droplet text-sky-500"></i>
                 <span>Solacium Relaxation Suite v2.0</span>
             </div>
@@ -287,7 +287,7 @@
             </p>
 
             <!-- Main Proceed Bubble Button -->
-            <div class="relative flex items-center justify-center gap-12">
+            <div class="relative flex items-center justify-center gap-8 sm:gap-12">
                 <!-- Setting > Side Bubble -->
                 <button onclick="openSettings()" class="bubble-btn w-28 h-28 rounded-full flex items-center justify-center text-slate-800 font-bold text-sm hover:scale-110">
                     <span class="font-brand text-lg text-slate-800">Setting &gt;</span>
@@ -303,7 +303,7 @@
 
         <!-- Bottom Bar -->
         <div class="w-full max-w-md mx-auto pb-4 text-center">
-            <div class="aero-window py-2 px-6 rounded-full inline-block text-xs font-semibold text-slate-600 shadow-md">
+            <div class="bg-white/80 backdrop-blur-md py-2 px-6 rounded-full inline-block text-xs font-semibold text-slate-600 shadow-md">
                 ✨ Tip: Pop bubbles smoothly to create tranquil soundscapes.
             </div>
         </div>
@@ -337,15 +337,15 @@
         <!-- Center Interactive Game Grid Area -->
         <div class="flex-1 w-full max-w-5xl mx-auto my-4 relative flex items-center justify-center">
             <!-- Bubble Matrix Container -->
-            <div id="bubbleGrid" class="w-full h-full max-h-[600px] bg-white/10 backdrop-blur-sm rounded-3xl p-4 border border-white/30 shadow-2xl grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 gap-3 sm:gap-4 place-items-center overflow-y-auto">
+            <div id="bubbleGrid" class="w-full h-full max-h-[600px] bg-white/20 backdrop-blur-md rounded-3xl p-4 border border-white/40 shadow-2xl grid grid-cols-5 sm:grid-cols-6 md:grid-cols-8 gap-3 sm:gap-4 place-items-center overflow-y-auto">
                 <!-- Dynamic Bubbles Injected via JS -->
             </div>
         </div>
     </div>
 
     <!-- ================= SETTINGS POPUP MODAL ================= -->
-    <div id="settingsModal" class="fixed inset-0 bg-black/30 backdrop-blur-xs flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
-        <div class="aero-window w-[92%] max-w-md overflow-hidden transform scale-95 transition-transform duration-300" id="settingsBox">
+    <div id="settingsModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="aero-window w-[92%] max-w-md bg-white overflow-hidden transform scale-95 transition-transform duration-300 shadow-2xl" id="settingsBox">
             <!-- Header Bar -->
             <div class="aero-header px-4 py-2.5 flex justify-between items-center">
                 <div class="flex items-center gap-2 text-sm font-bold">
@@ -354,14 +354,14 @@
                 </div>
                 <!-- Standard OS Modal Controls -->
                 <div class="flex items-center gap-1">
-                    <button class="w-5 h-5 bg-sky-200/30 text-white rounded text-xs hover:bg-sky-200/50 flex items-center justify-center">_</button>
-                    <button class="w-5 h-5 bg-sky-200/30 text-white rounded text-xs hover:bg-sky-200/50 flex items-center justify-center">□</button>
+                    <button class="w-5 h-5 bg-white/20 text-white rounded text-xs hover:bg-white/40 flex items-center justify-center">_</button>
+                    <button class="w-5 h-5 bg-white/20 text-white rounded text-xs hover:bg-white/40 flex items-center justify-center">□</button>
                     <button onclick="closeSettings()" class="w-5 h-5 bg-red-500 hover:bg-red-600 text-white rounded text-xs font-bold flex items-center justify-center">✕</button>
                 </div>
             </div>
 
-            <!-- Settings Content -->
-            <div class="p-6 space-y-6 text-slate-800 text-sm">
+            <!-- Settings Content with Solid White Background -->
+            <div class="p-6 bg-white space-y-6 text-slate-800 text-sm">
                 <!-- Volume Controls -->
                 <div class="space-y-2">
                     <div class="flex justify-between font-bold text-slate-700">
@@ -392,15 +392,14 @@
                 <div class="border-t border-slate-200 pt-4 space-y-2">
                     <label class="font-bold text-slate-700 block">Tint Color Overlay Theme</label>
                     <div class="flex items-center justify-between gap-1 pt-1">
-                        <!-- Swatches matching screenshot: Orange, Red, Purple, Dark Blue, Light Blue, Green, Yellow, Pink -->
-                        <button onclick="setThemeColor('orange', this)" class="swatch-btn w-6 h-6 rounded-full bg-orange-500 border-2 border-white shadow-sm" title="Orange"></button>
-                        <button onclick="setThemeColor('red', this)" class="swatch-btn w-6 h-6 rounded-full bg-red-600 border-2 border-white shadow-sm" title="Red"></button>
-                        <button onclick="setThemeColor('purple', this)" class="swatch-btn w-6 h-6 rounded-full bg-purple-700 border-2 border-white shadow-sm" title="Purple"></button>
-                        <button onclick="setThemeColor('blue', this)" class="swatch-btn w-6 h-6 rounded-full bg-blue-600 border-2 border-white shadow-sm ring-2 ring-sky-500 transform scale-110" title="Dark Blue"></button>
-                        <button onclick="setThemeColor('cyan', this)" class="swatch-btn w-6 h-6 rounded-full bg-sky-400 border-2 border-white shadow-sm" title="Light Blue"></button>
-                        <button onclick="setThemeColor('green', this)" class="swatch-btn w-6 h-6 rounded-full bg-lime-500 border-2 border-white shadow-sm" title="Green"></button>
-                        <button onclick="setThemeColor('yellow', this)" class="swatch-btn w-6 h-6 rounded-full bg-yellow-400 border-2 border-white shadow-sm" title="Yellow"></button>
-                        <button onclick="setThemeColor('pink', this)" class="swatch-btn w-6 h-6 rounded-full bg-pink-400 border-2 border-white shadow-sm" title="Pink"></button>
+                        <button onclick="setThemeColor('orange', this)" class="swatch-btn w-6 h-6 rounded-full bg-orange-500 border-2 border-white shadow-sm cursor-pointer" title="Orange"></button>
+                        <button onclick="setThemeColor('red', this)" class="swatch-btn w-6 h-6 rounded-full bg-red-600 border-2 border-white shadow-sm cursor-pointer" title="Red"></button>
+                        <button onclick="setThemeColor('purple', this)" class="swatch-btn w-6 h-6 rounded-full bg-purple-700 border-2 border-white shadow-sm cursor-pointer" title="Purple"></button>
+                        <button onclick="setThemeColor('blue', this)" class="swatch-btn w-6 h-6 rounded-full bg-blue-600 border-2 border-white shadow-sm ring-2 ring-sky-500 transform scale-110 cursor-pointer" title="Dark Blue"></button>
+                        <button onclick="setThemeColor('cyan', this)" class="swatch-btn w-6 h-6 rounded-full bg-sky-400 border-2 border-white shadow-sm cursor-pointer" title="Light Blue"></button>
+                        <button onclick="setThemeColor('green', this)" class="swatch-btn w-6 h-6 rounded-full bg-lime-500 border-2 border-white shadow-sm cursor-pointer" title="Green"></button>
+                        <button onclick="setThemeColor('yellow', this)" class="swatch-btn w-6 h-6 rounded-full bg-yellow-400 border-2 border-white shadow-sm cursor-pointer" title="Yellow"></button>
+                        <button onclick="setThemeColor('pink', this)" class="swatch-btn w-6 h-6 rounded-full bg-pink-400 border-2 border-white shadow-sm cursor-pointer" title="Pink"></button>
                     </div>
                 </div>
 
@@ -429,8 +428,8 @@
     </div>
 
     <!-- ================= BACKGROUND MUSIC OPTIONS MODAL ================= -->
-    <div id="bgmModal" class="fixed inset-0 bg-black/30 backdrop-blur-xs flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
-        <div class="aero-window w-[92%] max-w-sm overflow-hidden transform scale-95 transition-transform duration-300">
+    <div id="bgmModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="aero-window w-[92%] max-w-sm bg-white overflow-hidden transform scale-95 transition-transform duration-300 shadow-2xl">
             <!-- Header -->
             <div class="aero-header px-4 py-2.5 flex justify-between items-center">
                 <div class="flex items-center gap-2 text-sm font-bold">
@@ -440,9 +439,9 @@
                 <button onclick="closeBGMModal()" class="w-5 h-5 bg-red-500 hover:bg-red-600 text-white rounded text-xs font-bold flex items-center justify-center">✕</button>
             </div>
 
-            <!-- Content matching flow chart choices -->
-            <div class="p-5 space-y-3">
-                <p class="text-xs text-slate-600 font-semibold">Select the background music</p>
+            <!-- Content -->
+            <div class="p-5 bg-white space-y-3">
+                <p class="text-xs text-slate-600 font-semibold">Select the background music:</p>
                 
                 <div class="grid grid-cols-3 gap-2">
                     <button onclick="selectBGMTrack('none', this)" class="bgm-btn os-btn os-btn-active py-2.5 px-2 text-xs flex items-center justify-center font-bold">
@@ -474,8 +473,8 @@
     </div>
 
     <!-- ================= BACKGROUND SELECTION MODAL ================= -->
-    <div id="bgModal" class="fixed inset-0 bg-black/30 backdrop-blur-xs flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
-        <div class="aero-window w-[92%] max-w-lg overflow-hidden transform scale-95 transition-transform duration-300">
+    <div id="bgModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="aero-window w-[92%] max-w-lg bg-white overflow-hidden transform scale-95 transition-transform duration-300 shadow-2xl">
             <!-- Header -->
             <div class="aero-header px-4 py-2.5 flex justify-between items-center">
                 <div class="flex items-center gap-2 text-sm font-bold">
@@ -486,41 +485,41 @@
             </div>
 
             <!-- Content Grid -->
-            <div class="p-5 space-y-3">
+            <div class="p-5 bg-white space-y-3">
                 <p class="text-xs text-slate-600 font-semibold">Select a picture to change the background:</p>
                 <div class="grid grid-cols-3 gap-3">
                     <!-- Wallpaper 1 -->
-                    <button onclick="changeBackground('hills', this)" class="bg-card group border-2 border-sky-500 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
+                    <button onclick="changeBackground('hills', this)" class="bg-card group border-2 border-sky-500 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
                         <div class="h-20 rounded bg-gradient-to-b from-sky-400 via-sky-200 to-emerald-500 relative flex items-end justify-center pb-1">
                             <span class="text-[10px] font-bold text-white drop-shadow">Wallpaper 1</span>
                         </div>
                     </button>
                     <!-- Wallpaper 2 -->
-                    <button onclick="changeBackground('sunset', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
+                    <button onclick="changeBackground('sunset', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
                         <div class="h-20 rounded bg-gradient-to-b from-amber-500 via-rose-400 to-purple-800 relative flex items-end justify-center pb-1">
                             <span class="text-[10px] font-bold text-white drop-shadow">Wallpaper 2</span>
                         </div>
                     </button>
                     <!-- Wallpaper 3 -->
-                    <button onclick="changeBackground('ocean', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
+                    <button onclick="changeBackground('ocean', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
                         <div class="h-20 rounded bg-gradient-to-b from-cyan-400 via-blue-600 to-indigo-900 relative flex items-end justify-center pb-1">
                             <span class="text-[10px] font-bold text-white drop-shadow">Wallpaper 3</span>
                         </div>
                     </button>
                     <!-- Wallpaper 4 -->
-                    <button onclick="changeBackground('clouds', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
+                    <button onclick="changeBackground('clouds', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
                         <div class="h-20 rounded bg-gradient-to-b from-sky-300 via-indigo-200 to-slate-300 relative flex items-end justify-center pb-1">
                             <span class="text-[10px] font-bold text-slate-700 drop-shadow">Wallpaper 4</span>
                         </div>
                     </button>
                     <!-- Wallpaper 5 -->
-                    <button onclick="changeBackground('space', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
+                    <button onclick="changeBackground('space', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
                         <div class="h-20 rounded bg-gradient-to-b from-indigo-950 via-purple-900 to-slate-900 relative flex items-end justify-center pb-1">
                             <span class="text-[10px] font-bold text-purple-200 drop-shadow">Wallpaper 5</span>
                         </div>
                     </button>
                     <!-- Wallpaper 6 -->
-                    <button onclick="changeBackground('mint', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
+                    <button onclick="changeBackground('mint', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
                         <div class="h-20 rounded bg-gradient-to-b from-emerald-300 via-teal-400 to-cyan-600 relative flex items-end justify-center pb-1">
                             <span class="text-[10px] font-bold text-white drop-shadow">Wallpaper 6</span>
                         </div>
@@ -536,8 +535,8 @@
     </div>
 
     <!-- ================= SFX CHOICE MODAL ================= -->
-    <div id="sfxModal" class="fixed inset-0 bg-black/30 backdrop-blur-xs flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
-        <div class="aero-window w-[92%] max-w-sm overflow-hidden transform scale-95 transition-transform duration-300">
+    <div id="sfxModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="aero-window w-[92%] max-w-sm bg-white overflow-hidden transform scale-95 transition-transform duration-300 shadow-2xl">
             <!-- Header -->
             <div class="aero-header px-4 py-2.5 flex justify-between items-center">
                 <div class="flex items-center gap-2 text-sm font-bold">
@@ -547,9 +546,9 @@
                 <button onclick="closeSFXModal()" class="w-5 h-5 bg-red-500 hover:bg-red-600 text-white rounded text-xs font-bold flex items-center justify-center">✕</button>
             </div>
 
-            <!-- Content matching flow chart choices -->
-            <div class="p-5 space-y-3">
-                <p class="text-xs text-slate-600 font-semibold">Select the sound effect that plays when popping the bubbles:</p>
+            <!-- Content -->
+            <div class="p-5 bg-white space-y-3">
+                <p class="text-xs text-slate-600 font-semibold">Select the sound effect that plays when popping bubbles:</p>
                 
                 <div class="grid grid-cols-3 gap-2">
                     <button onclick="selectSoundEffect('default', this)" class="sfx-btn os-btn os-btn-active py-2 px-2 text-xs flex items-center justify-center">
@@ -577,7 +576,7 @@
                         Hee Hee
                     </button>
                     <button onclick="selectSoundEffect('verity', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
-                        verity
+                        Verity
                     </button>
                 </div>
             </div>
@@ -590,8 +589,8 @@
     </div>
 
     <!-- ================= HELP POPUP MODAL ================= -->
-    <div id="helpModal" class="fixed inset-0 bg-black/30 backdrop-blur-xs flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
-        <div class="aero-window w-[92%] max-w-md overflow-hidden transform scale-95 transition-transform duration-300">
+    <div id="helpModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="aero-window w-[92%] max-w-md bg-white overflow-hidden transform scale-95 transition-transform duration-300 shadow-2xl">
             <!-- Header -->
             <div class="aero-header px-4 py-2.5 flex justify-between items-center">
                 <div class="flex items-center gap-2 text-sm font-bold">
@@ -601,10 +600,10 @@
                 <button onclick="closeHelp()" class="w-5 h-5 bg-red-500 hover:bg-red-600 text-white rounded text-xs font-bold flex items-center justify-center">✕</button>
             </div>
 
-            <!-- Help Body Text matching chart layout -->
-            <div class="p-6 text-slate-800 text-sm leading-relaxed space-y-4">
+            <!-- Help Body Text -->
+            <div class="p-6 bg-white text-slate-800 text-sm leading-relaxed space-y-4">
                 <div class="bg-sky-50 border border-sky-200 p-4 rounded-xl text-xs text-sky-900 leading-relaxed shadow-inner">
-                    Welcome to <strong>Solacium!</strong> In this game, you pop bubbles. To start the game, press the <strong>proceed button</strong>. To change the volume, music, sounds, color theme, and wallpaper, click the <strong>setting button</strong>.
+                    Welcome to <strong>Solacium!</strong> In this game, you pop bubbles. To start the game, press the <strong>Proceed button</strong>. To change the volume, music, sounds, color theme, and wallpaper, click the <strong>Setting button</strong>.
                 </div>
             </div>
 
@@ -725,6 +724,34 @@
         }
 
         /* ================= AUDIO & SFX ADJUSTMENTS ================= */
+        let audioCtx = null;
+        let masterGain = null;
+        let bgmGain = null;
+        let soundVolume = 0.7;
+        let soundEnabled = true;
+        let currentSFX = 'default';
+        let currentBGM = 'none';
+        let bgmTimer = null;
+        let bgmStep = 0;
+
+        function initAudio() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (AudioContext && !audioCtx) {
+                    audioCtx = new AudioContext();
+                    masterGain = audioCtx.createGain();
+                    masterGain.gain.value = soundVolume;
+                    masterGain.connect(audioCtx.destination);
+
+                    bgmGain = audioCtx.createGain();
+                    bgmGain.gain.value = 0.35;
+                    bgmGain.connect(masterGain);
+                }
+            } catch (e) {
+                console.warn('Web Audio API not supported', e);
+            }
+        }
+
         function updateVolume(val) {
             soundVolume = val / 100;
             document.getElementById('volValueText').innerText = `${val}%`;
@@ -735,6 +762,11 @@
 
         function toggleSFX(enabled) {
             soundEnabled = enabled;
+            if (!enabled) {
+                stopBGM();
+            } else if (currentBGM !== 'none') {
+                startBGM(currentBGM);
+            }
         }
 
         function selectSoundEffect(sfxKey, btn) {
@@ -746,7 +778,6 @@
 
         function changeBackground(theme, btn) {
             const bgContainer = document.getElementById('bgContainer');
-            
             bgContainer.className = 'absolute inset-0 transition-all duration-700 ease-in-out ';
 
             if (theme === 'hills') {
@@ -774,42 +805,13 @@
             animateCanvas();
         };
 
-        /* ================= AUDIO SYNTHESIZER & SFX ================= */
-        let audioCtx = null;
-        let masterGain = null;
-        let bgmGain = null;
-        let soundVolume = 0.7;
-        let soundEnabled = true;
-        let currentSFX = 'default';
-        let currentBGM = 'none';
-        let bgmTimer = null;
-        let bgmStep = 0;
-
-        function initAudio() {
-            try {
-                const AudioContext = window.AudioContext || window.webkitAudioContext;
-                if (AudioContext && !audioCtx) {
-                    audioCtx = new AudioContext();
-                    masterGain = audioCtx.createGain();
-                    masterGain.gain.value = soundVolume;
-                    masterGain.connect(audioCtx.destination);
-
-                    bgmGain = audioCtx.createGain();
-                    bgmGain.gain.value = 0.35; // Comfortable BGM level
-                    bgmGain.connect(masterGain);
-                }
-            } catch (e) {
-                console.warn('Web Audio API not supported', e);
-            }
-        }
-
         /* ================= BACKGROUND MUSIC SYNTHESIZER ================= */
         const bgmNotes = {
-            calm: [261.63, 329.63, 392.00, 523.25, 392.00, 329.63], // C major arpeggio
-            cute: [523.25, 659.25, 783.99, 659.25, 880.00, 783.99], // Upbeat high melody
-            soft: [220.00, 277.18, 329.63, 440.00, 329.63, 277.18], // A major soft warmth
-            soothing: [174.61, 220.00, 261.63, 349.23, 261.63, 220.00], // F major deep ambient
-            chillhop: [146.83, 220.00, 261.63, 293.66, 349.23, 293.66] // D minor chill loop
+            calm: [261.63, 329.63, 392.00, 523.25, 392.00, 329.63],
+            cute: [523.25, 659.25, 783.99, 659.25, 880.00, 783.99],
+            soft: [220.00, 277.18, 329.63, 440.00, 329.63, 277.18],
+            soothing: [174.61, 220.00, 261.63, 349.23, 261.63, 220.00],
+            chillhop: [146.83, 220.00, 261.63, 293.66, 349.23, 293.66]
         };
 
         function selectBGMTrack(trackKey, btn) {
@@ -870,23 +872,6 @@
             }, interval);
         }
 
-        function updateVolume(val) {
-            soundVolume = val / 100;
-            document.getElementById('volValueText').innerText = `${val}%`;
-            if (masterGain) {
-                masterGain.gain.value = soundVolume;
-            }
-        }
-
-        function toggleSFX(enabled) {
-            soundEnabled = enabled;
-            if (!enabled) {
-                stopBGM();
-            } else if (currentBGM !== 'none') {
-                startBGM(currentBGM);
-            }
-        }
-
         function playPopSound(freqOffset = 0) {
             if (!soundEnabled) return;
             if (!audioCtx) initAudio();
@@ -898,7 +883,6 @@
             const now = audioCtx.currentTime;
 
             if (currentSFX === 'bruh') {
-                // Low pitched synth tone mimicking "bruh" vocal pitch drop
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'sawtooth';
@@ -911,7 +895,6 @@
                 osc.start(now);
                 osc.stop(now + 0.36);
             } else if (currentSFX === 'getout') {
-                // Staccato dual pulse
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'square';
@@ -924,7 +907,6 @@
                 osc.start(now);
                 osc.stop(now + 0.26);
             } else if (currentSFX === 'fart') {
-                // Low noise / frequency wobble sweep
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'sawtooth';
@@ -937,7 +919,6 @@
                 osc.start(now);
                 osc.stop(now + 0.31);
             } else if (currentSFX === 'vineboom') {
-                // Heavy bass drop impact
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'sine';
@@ -950,12 +931,11 @@
                 osc.start(now);
                 osc.stop(now + 0.51);
             } else if (currentSFX === 'sixseven') {
-                // Two upbeat tones
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'sine';
-                osc.frequency.setValueAtTime(523.25, now); // C5
-                osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
+                osc.frequency.setValueAtTime(523.25, now);
+                osc.frequency.setValueAtTime(659.25, now + 0.1);
                 gain.gain.setValueAtTime(0.3 * soundVolume, now);
                 gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
                 osc.connect(gain);
@@ -963,7 +943,6 @@
                 osc.start(now);
                 osc.stop(now + 0.26);
             } else if (currentSFX === 'fahhh') {
-                // High airy chirp sweep
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'triangle';
@@ -976,7 +955,6 @@
                 osc.start(now);
                 osc.stop(now + 0.41);
             } else if (currentSFX === 'heehee') {
-                // Double high pitched chirp
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'sine';
@@ -989,7 +967,6 @@
                 osc.start(now);
                 osc.stop(now + 0.23);
             } else if (currentSFX === 'verity') {
-                // Harmonic arpeggiated chime
                 const freqs = [523.25, 659.25, 783.99];
                 freqs.forEach((f, idx) => {
                     const osc = audioCtx.createOscillator();
@@ -1004,7 +981,6 @@
                     osc.stop(now + idx * 0.05 + 0.31);
                 });
             } else {
-                // Default Bubble Pop
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'sine';
@@ -1067,7 +1043,6 @@
                         Object.assign(b, createAmbientBubble());
                     }
 
-                    // Render floating bubble
                     ctx.save();
                     ctx.beginPath();
                     ctx.arc(curX, b.y, b.radius, 0, Math.PI * 2);
@@ -1078,7 +1053,6 @@
                     ctx.lineWidth = 1.5;
                     ctx.stroke();
 
-                    // Bubble glint
                     ctx.beginPath();
                     ctx.arc(curX - b.radius * 0.3, b.y - b.radius * 0.3, b.radius * 0.25, 0, Math.PI * 2);
                     ctx.fillStyle = `rgba(255, 255, 255, ${b.opacity * 0.8})`;
@@ -1090,7 +1064,7 @@
         }
 
         /* ================= GAME PAGE BUBBLE GRID ================= */
-        const BUBBLE_COUNT = 32; // Exactly 32 uniform bubbles
+        const BUBBLE_COUNT = 32;
 
         function initBubbleGrid() {
             const grid = document.getElementById('bubbleGrid');
@@ -1158,13 +1132,19 @@
             const modal = document.getElementById(id);
             if (!modal) return;
             modal.classList.remove('hidden');
-            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                const box = modal.querySelector('.aero-window');
+                if (box) box.classList.remove('scale-95');
+            }, 10);
         }
 
         function closeModal(id) {
             const modal = document.getElementById(id);
             if (!modal) return;
             modal.classList.add('opacity-0');
+            const box = modal.querySelector('.aero-window');
+            if (box) box.classList.add('scale-95');
             setTimeout(() => modal.classList.add('hidden'), 300);
         }
 
