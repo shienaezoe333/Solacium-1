@@ -891,30 +891,17 @@
         const getOutAudio = new Audio('Get Out_SFX.mp3'); // Replace with your actual file path/name
         getOutAudio.volume = soundVolume;
         getOutAudio.play().catch(e => console.log("Audio play blocked", e));
-            } else if (currentSFX === 'fart') {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sawtooth';
-                osc.frequency.setValueAtTime(90, now);
-                osc.frequency.linearRampToValueAtTime(45, now + 0.3);
-                gain.gain.setValueAtTime(0.5 * soundVolume, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
-                osc.connect(gain);
-                gain.connect(masterGain);
-                osc.start(now);
-                osc.stop(now + 0.31);
-            } else if (currentSFX === 'vineboom') {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(130, now);
-                osc.frequency.exponentialRampToValueAtTime(30, now + 0.5);
-                gain.gain.setValueAtTime(0.8 * soundVolume, now);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
-                osc.connect(gain);
-                gain.connect(masterGain);
-                osc.start(now);
-                osc.stop(now + 0.51);
+     
+        } else if (currentSFX === 'fart') {
+        const fartAudio = new Audio('dry-fart.mp3');
+        fartAudio.volume = soundVolume;
+        fartAudio.play().catch(e => console.log("Audio play blocked", e));
+    }
+           } else if (currentSFX === 'vineboom') {
+        const vineBoomAudio = new Audio('vine-boom.mp3');
+        vineBoomAudio.volume = soundVolume;
+        vineBoomAudio.play().catch(e => console.log("Audio play blocked", e));
+    }
             } else if (currentSFX === 'sixseven') {
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
