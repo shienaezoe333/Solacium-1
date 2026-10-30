@@ -882,30 +882,15 @@
 
             const now = audioCtx.currentTime;
 
-            if (currentSFX === 'bruh') {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'sawtooth';
-                osc.frequency.setValueAtTime(140 + freqOffset, now);
-                osc.frequency.exponentialRampToValueAtTime(70, now + 0.35);
-                gain.gain.setValueAtTime(0.4 * soundVolume, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
-                osc.connect(gain);
-                gain.connect(masterGain);
-                osc.start(now);
-                osc.stop(now + 0.36);
-            } else if (currentSFX === 'getout') {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'square';
-                osc.frequency.setValueAtTime(320, now);
-                osc.frequency.setValueAtTime(220, now + 0.1);
-                gain.gain.setValueAtTime(0.3 * soundVolume, now);
-                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.25);
-                osc.connect(gain);
-                gain.connect(masterGain);
-                osc.start(now);
-                osc.stop(now + 0.26);
+           if (currentSFX === 'bruh') {
+        const bruhAudio = new Audio('Bruh_SFX.mp3');
+        bruhAudio.volume = soundVolume;
+        bruhAudio.play().catch(e => console.log("Audio play blocked", e));
+    }
+           } else if (currentSFX === 'getout') {
+        const getOutAudio = new Audio('Get Out_SFX.mp3'); // Replace with your actual file path/name
+        getOutAudio.volume = soundVolume;
+        getOutAudio.play().catch(e => console.log("Audio play blocked", e));
             } else if (currentSFX === 'fart') {
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
