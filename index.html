@@ -464,8 +464,8 @@
 </div>
 
 <!-- ================= BACKGROUND SELECTION MODAL ================= -->
- <div id="bgModal" class="fixed inset-0 bg-black/30 backdrop-blur-xs flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
-    <div class="aero-window w-[92%] max-w-lg overflow-hidden transform scale-95 transition-transform duration-300">
+<div id="bgModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+    <div class="aero-window w-[92%] max-w-lg bg-white overflow-hidden transform scale-95 transition-transform duration-300 shadow-2xl">
         <!-- Header -->
         <div class="aero-header px-4 py-2.5 flex justify-between items-center">
             <div class="flex items-center gap-2 text-sm font-bold">
@@ -476,43 +476,43 @@
         </div>
 
         <!-- Content Grid -->
-        <div class="p-5 space-y-3">
+        <div class="p-5 bg-white space-y-3">
             <p class="text-xs text-slate-600 font-semibold">Select a picture to change the background:</p>
             <div class="grid grid-cols-3 gap-3">
-                <!-- Wallpaper 12 -->
-                <button onclick="changeBackground('12.png', this)" class="bg-card group border-2 border-sky-500 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
-                    <div style="background-image: url('12.png');" class="h-20 rounded bg-cover bg-center relative flex items-end justify-center pb-1">
-                        <span class="text-[10px] font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Wallpaper 12</span>
+                <!-- Wallpaper 1 -->
+                <button onclick="changeBackground('hills', this)" class="bg-card group border-2 border-sky-500 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
+                    <div class="h-20 rounded bg-gradient-to-b from-sky-400 via-sky-200 to-emerald-500 relative flex items-end justify-center pb-1">
+                        <span class="text-[10px] font-bold text-white drop-shadow">Wallpaper 1</span>
                     </div>
                 </button>
-                <!-- Wallpaper 13 -->
-                <button onclick="changeBackground('13.png', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
-                    <div style="background-image: url('13.png');" class="h-20 rounded bg-cover bg-center relative flex items-end justify-center pb-1">
-                        <span class="text-[10px] font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Wallpaper 13</span>
+                <!-- Wallpaper 2 -->
+                <button onclick="changeBackground('sunset', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
+                    <div class="h-20 rounded bg-gradient-to-b from-amber-500 via-rose-400 to-purple-800 relative flex items-end justify-center pb-1">
+                        <span class="text-[10px] font-bold text-white drop-shadow">Wallpaper 2</span>
                     </div>
                 </button>
-                <!-- Wallpaper 14 -->
-                <button onclick="changeBackground('14.png', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
-                    <div style="background-image: url('14.png');" class="h-20 rounded bg-cover bg-center relative flex items-end justify-center pb-1">
-                        <span class="text-[10px] font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Wallpaper 14</span>
+                <!-- Wallpaper 3 -->
+                <button onclick="changeBackground('ocean', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
+                    <div class="h-20 rounded bg-gradient-to-b from-cyan-400 via-blue-600 to-indigo-900 relative flex items-end justify-center pb-1">
+                        <span class="text-[10px] font-bold text-white drop-shadow">Wallpaper 3</span>
                     </div>
                 </button>
-                <!-- Wallpaper 15 -->
-                <button onclick="changeBackground('15.png', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
-                    <div style="background-image: url('15.png');" class="h-20 rounded bg-cover bg-center relative flex items-end justify-center pb-1">
-                        <span class="text-[10px] font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Wallpaper 15</span>
+                <!-- Wallpaper 4 -->
+                <button onclick="changeBackground('clouds', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
+                    <div class="h-20 rounded bg-gradient-to-b from-sky-300 via-indigo-200 to-slate-300 relative flex items-end justify-center pb-1">
+                        <span class="text-[10px] font-bold text-slate-700 drop-shadow">Wallpaper 4</span>
                     </div>
                 </button>
-                <!-- Wallpaper 16 -->
-                <button onclick="changeBackground('16.png', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
-                    <div style="background-image: url('16.png');" class="h-20 rounded bg-cover bg-center relative flex items-end justify-center pb-1">
-                        <span class="text-[10px] font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Wallpaper 16</span>
+                <!-- Wallpaper 5 -->
+                <button onclick="changeBackground('space', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
+                    <div class="h-20 rounded bg-gradient-to-b from-indigo-950 via-purple-900 to-slate-900 relative flex items-end justify-center pb-1">
+                        <span class="text-[10px] font-bold text-purple-200 drop-shadow">Wallpaper 5</span>
                     </div>
                 </button>
-                <!-- Wallpaper 17 -->
-                <button onclick="changeBackground('17.png', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all">
-                    <div style="background-image: url('17.png');" class="h-20 rounded bg-cover bg-center relative flex items-end justify-center pb-1">
-                        <span class="text-[10px] font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Wallpaper 17</span>
+                <!-- Wallpaper 6 -->
+                <button onclick="changeBackground('mint', this)" class="bg-card group border-2 border-transparent hover:border-sky-400 rounded-lg overflow-hidden p-1 bg-white hover:shadow-md transition-all cursor-pointer">
+                    <div class="h-20 rounded bg-gradient-to-b from-emerald-300 via-teal-400 to-cyan-600 relative flex items-end justify-center pb-1">
+                        <span class="text-[10px] font-bold text-white drop-shadow">Wallpaper 6</span>
                     </div>
                 </button>
             </div>
@@ -524,12 +524,6 @@
         </div>
     </div>
 </div>
-            <!-- Footer -->
-            <div class="bg-slate-100 px-5 py-3 border-t border-slate-200 flex justify-end">
-                <button onclick="closeBackgroundModal()" class="os-btn px-5 py-1 text-xs">Done</button>
-            </div>
-        </div>
-    </div>
 
 <!-- ================= SFX CHOICE MODAL ================= -->
 <div id="sfxModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
@@ -551,28 +545,28 @@
                 <button onclick="selectSoundEffect('default', this)" class="sfx-btn os-btn os-btn-active py-2 px-2 text-xs flex items-center justify-center">
                     Default Pop
                 </button>
-                <button onclick="selectSoundEffect('Bruh', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
+                <button onclick="selectSoundEffect('bruh', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
                     Bruh
                 </button>
-                <button onclick="selectSoundEffect('Get Out', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
+                <button onclick="selectSoundEffect('getout', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
                     Get Out
                 </button>
-                <button onclick="selectSoundEffect('Fart #1', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
+                <button onclick="selectSoundEffect('fart', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
                     Fart #1
                 </button>
-                <button onclick="selectSoundEffect('Vine Boom', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
+                <button onclick="selectSoundEffect('vineboom', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
                     Vine Boom
                 </button>
-                <button onclick="selectSoundEffect('Six Seven', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
+                <button onclick="selectSoundEffect('sixseven', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
                     Six Seven
                 </button>
-                <button onclick="selectSoundEffect('FAHHH', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
+                <button onclick="selectSoundEffect('fahhh', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
                     FAHHH
                 </button>
-                <button onclick="selectSoundEffect('Hee Hee', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
+                <button onclick="selectSoundEffect('heehee', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
                     Hee Hee
                 </button>
-                <button onclick="selectSoundEffect('Verity', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
+                <button onclick="selectSoundEffect('verity', this)" class="sfx-btn os-btn py-2 px-2 text-xs flex items-center justify-center">
                     Verity
                 </button>
             </div>
