@@ -720,7 +720,7 @@
         }
     }
 
-    /* ================= AUDIO & SFX ADJUSTMENTS ================= */
+    /* ================= AUDIO & SFX ADJUSTMENTS & backround ================= */
     let audioCtx = null;
     let masterGain = null;
     let bgmGain = null;
@@ -778,7 +778,7 @@
         bgContainer.className = 'absolute inset-0 transition-all duration-700 ease-in-out ';
 
         if (theme === 'hills') {
-            bgContainer.className += 'bg-hills';
+            bgContainer.className += 'Settings (7).jpg';
         } else if (theme === 'sunset') {
             bgContainer.className += 'bg-gradient-to-b from-amber-500 via-rose-500 to-purple-900';
         } else if (theme === 'ocean') {
