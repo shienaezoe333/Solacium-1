@@ -773,27 +773,39 @@
         playPopSound();
     }
 
-    function changeBackground(theme, btn) {
-        const bgContainer = document.getElementById('bgContainer');
-        bgContainer.className = 'absolute inset-0 transition-all duration-700 ease-in-out ';
+   function changeBackground(theme, btn) {
+    const bgContainer = document.getElementById('bgContainer');
 
-        if (theme === 'hills') {
-            bgContainer.className += 'Settings (7).jpg';
-        } else if (theme === 'sunset') {
-            bgContainer.className += 'Settings.jpg';
-        } else if (theme === 'ocean') {
-            bgContainer.className += 'Settings (3).jpg';
-        } else if (theme === 'clouds') {
-            bgContainer.className += 'Settings (4).jpg';
-        } else if (theme === 'space') {
-            bgContainer.className += 'Settings (5). jpg';
-        } else if (theme === 'mint') {
-            bgContainer.className += 'Settings (6).jpg';
-        }
+    // Reset the container's styling
+    bgContainer.className = 'absolute inset-0 transition-all duration-700 ease-in-out';
+    bgContainer.style.backgroundImage = '';
+    bgContainer.style.backgroundSize = 'cover';
+    bgContainer.style.backgroundPosition = 'center';
 
-        document.querySelectorAll('.bg-card').forEach(b => b.classList.replace('border-sky-500', 'border-transparent'));
-        if (btn) btn.classList.replace('border-transparent', 'border-sky-500');
+    const backgrounds = {
+        hills: 'Settings (7).jpg',
+        sunset: 'Settings.jpg',
+        ocean: 'Settings (3).jpg',
+        clouds: 'Settings (4).jpg',
+        space: 'Settings (5).jpg',
+        mint: 'Settings (6).jpg'
+    };
+
+    // Apply the selected wallpaper
+    if (backgrounds[theme]) {
+        bgContainer.style.backgroundImage =
+            `url("${backgrounds[theme]}")`;
     }
+
+    // Update selected theme button
+    document.querySelectorAll('.bg-card').forEach(b =>
+        b.classList.replace('border-sky-500', 'border-transparent')
+    );
+
+    if (btn) {
+        btn.classList.replace('border-transparent', 'border-sky-500');
+    }
+}
 
     window.onload = function() {
         initAudio();
